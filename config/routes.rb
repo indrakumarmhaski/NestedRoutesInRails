@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  
+  resources :schools
+  
   devise_for :principals
+  
   root to: 'pages#home'
   get 'pages/home'
   get 'pages/about'

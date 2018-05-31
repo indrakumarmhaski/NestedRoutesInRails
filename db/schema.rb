@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_062244) do
+ActiveRecord::Schema.define(version: 2018_05_31_064235) do
 
   create_table "principals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +29,15 @@ ActiveRecord::Schema.define(version: 2018_05_31_062244) do
     t.index ["reset_password_token"], name: "index_principals_on_reset_password_token", unique: true
   end
 
+  create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "reg_no"
+    t.text "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "principal_id"
+    t.index ["principal_id"], name: "index_schools_on_principal_id"
+  end
+
+  add_foreign_key "schools", "principals"
 end
