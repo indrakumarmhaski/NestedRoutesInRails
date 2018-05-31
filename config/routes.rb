@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :principals
   root to: 'pages#home'
   get 'pages/home'
   get 'pages/about'

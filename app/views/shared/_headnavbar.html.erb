@@ -17,7 +17,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <% if current_governer %>
+      <% if current_principal %>
           <%= link_to "LogOut",destroy_principal_session_path, method: :delete, class: "btn btn-outline-success my-2 my-sm-0"%>   
       <% else %>
           <%= link_to "Log_In",new_principal_session_path, class: "btn btn-outline-success my-2 my-sm-0"%>  
