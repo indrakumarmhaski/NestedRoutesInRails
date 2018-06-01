@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teachers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Education</th>
+      <th>Mobile</th>
+      <th>Age</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.education %></td>
+        <td><%= teacher.mob %></td>
+        <td><%= teacher.age %></td>
+        <td><%= link_to 'Edit', edit_school_teacher_path(@school,teacher) %></td>
+        <td><%= link_to 'Destroy',[@school,teacher], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Teacher', new_school_teacher_path %> | 
+<%= link_to 'Back', @school %>
+
+

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :schools
+  
+  resources :schools do
+    resources :teachers
+  end
   
   devise_for :principals
   
