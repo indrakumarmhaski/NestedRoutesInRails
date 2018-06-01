@@ -4,7 +4,11 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    if current_principal
+        @schools = School.where(principal_id: current_principal.id)
+    else
+        redirect_to pages_home_path
+    end
   end
 
   # GET /schools/1

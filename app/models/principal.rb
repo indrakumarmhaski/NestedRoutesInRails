@@ -3,5 +3,5 @@ class Principal < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :school
+  has_many :school, dependent: :destroy
 end
