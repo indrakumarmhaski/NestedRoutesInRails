@@ -1,24 +1,15 @@
-# README
+# NestedRoutesInRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple rails application in which I have implemented the concept of nested routes and also created forms in the development process of nested routes.
 
-Things you may want to cover:
+It is based on the real world example of school :
 
-* Ruby version
+* Ruby version: 2.5.1
 
-* System dependencies
+* Root entitiy: principal
 
-* Configuration
+* principal has a school and school belongs to a principal
 
-* Database creation
+* school has many teachers, teachers belongs to school
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In this way resourse teachers is nested in resource school, refer config/routes.rb for more details.
